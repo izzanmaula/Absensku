@@ -107,17 +107,19 @@ try {
     date_default_timezone_set('Asia/Jakarta');
     $jam_absen = date('H:i:s');
     $tanggal = date('Y-m-d');
+
     // Cek apakah waktu absen berada dalam rentang waktu yang diizinkan
-    if ($waktu_absen >= $awal_absen && $waktu_absen <= $akhir_absen) {
+    if ($jam_absen >= $awal_absen && $jam_absen <= $akhir_absen) {  // Menggunakan $jam_absen
         // Absen dalam batas waktu yang tepat
         $status = 'tepat waktu';
-    } elseif ($waktu_absen > $akhir_absen && $waktu_absen <= $akhir_kerja) {
+    } elseif ($jam_absen > $akhir_absen && $jam_absen <= $jam_pulang) { // Menggunakan $jam_absen dan $jam_pulang
         // Absen terlambat
         $status = 'terlambat';
     } else {
         // Jika di luar rentang waktu, set status ke 'absen di luar jam kerja'
         $status = 'pulang';
     }
+
     logProcess("Status absen: $status pada $jam_absen");
 
     // Simpan absensi

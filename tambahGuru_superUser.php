@@ -138,7 +138,7 @@ session_start();
 </div>
 
     <script>
-/ deklarasi untuk pendaftaran karyawan
+// deklarasi untuk pendaftaran karyawan
 const btn = document.getElementById('buttonDaftarkan');
 const modal = document.getElementById('confirmModalDaftar');
 const daftar = document.getElementById('confirmDaftar');

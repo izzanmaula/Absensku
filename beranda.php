@@ -10,9 +10,6 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || !isset(
     exit();
 }
 
-// Setelah cek session baru include file-file lain
-require_once 'attendance.php';
-
 
 
 
