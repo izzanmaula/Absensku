@@ -1579,6 +1579,34 @@ document.getElementById('kirimPerizinan').addEventListener('click', submitIjin);
 </div>
 
 
+
+<!-- HTML untuk kalender -->
+<div class="mt-3 me-3 ms-3 mb-0 rounded-4 p-2 z-3 main-container" style="background-color: white;position:relative;padding-bottom:10px; z-index:2;animation-delay: 0.6s">
+    <div class="pt-3 ps-3 pe-3 pb-3" id="calendarContainer">
+        <!-- navigasi kalender -->
+        <div class="month-navigator d-flex justify-content-between align-items-center">
+            <span class="btn btn-sm bi bi-arrow-left" style="background-color:rgb(238, 236, 226); border-radius:10px;" id="prevMonth"></span>
+            <h2 class="mb-0" id="monthYear" style="font-size: 16px;"></h2>
+            <span class="btn btn-sm bi bi-arrow-right" style="background-color:rgb(238, 236, 226); border-radius:10px;" id="nextMonth"></span>
+        </div>
+        <!-- grid kalender -->
+        <div class="attendance-grid" id="calendarGrid"></div>
+    </div>
+    
+    <!-- lagenda kalender -->
+    <div class="text-center mb-2">
+        <div class="d-inline-block me-3">
+            <div class="d-inline-block on-time" style="border-radius:10px; width: 10px; height: 10px;"></div>
+            <small>Tepat Waktu</small>
+        </div>
+        <div class="d-inline-block me-3">
+            <div class="d-inline-block late" style="border-radius:10px; width: 10px; height: 10px;"></div>
+            <small>Terlambat</small>
+        </div>
+    </div>
+</div>
+
+
 <!-- CSS untuk kalender -->
 <style>
     .attendance-grid {
@@ -1597,10 +1625,12 @@ document.getElementById('kirimPerizinan').addEventListener('click', submitIjin);
         justify-content: center;
         font-size: 11px;
         cursor: pointer;
+        background-color: #f5f5f5;
         transition: transform 0.2s;
         background-color: #fff;
         min-height: 30px;
         padding: 2px;
+        cursor: pointer;
         border-radius: 10px;
     }
     
@@ -1634,32 +1664,6 @@ document.getElementById('kirimPerizinan').addEventListener('click', submitIjin);
         transform: scale(1.1);
     }
 </style>
-
-<!-- HTML untuk kalender -->
-<div class="mt-3 me-3 ms-3 mb-0 rounded-4 p-2 z-3 main-container" style="background-color: white;position:relative;padding-bottom:10px; z-index:2;animation-delay: 0.6s">
-    <div class="pt-3 ps-3 pe-3 pb-3" id="calendarContainer">
-        <!-- navigasi kalender -->
-        <div class="month-navigator d-flex justify-content-between align-items-center">
-            <span class="btn btn-sm bi bi-arrow-left" style="background-color:rgb(238, 236, 226); border-radius:10px;" id="prevMonth"></span>
-            <h2 class="mb-0" id="monthYear" style="font-size: 16px;"></h2>
-            <span class="btn btn-sm bi bi-arrow-right" style="background-color:rgb(238, 236, 226); border-radius:10px;" id="nextMonth"></span>
-        </div>
-        <!-- grid kalender -->
-        <div class="attendance-grid" id="calendarGrid"></div>
-    </div>
-    
-    <!-- lagenda kalender -->
-    <div class="text-center mb-2">
-        <div class="d-inline-block me-3">
-            <div class="d-inline-block on-time" style="border-radius:10px; width: 10px; height: 10px;"></div>
-            <small>Tepat Waktu</small>
-        </div>
-        <div class="d-inline-block me-3">
-            <div class="d-inline-block late" style="border-radius:10px; width: 10px; height: 10px;"></div>
-            <small>Terlambat</small>
-        </div>
-    </div>
-</div>
 
 <!-- JavaScript untuk kalender -->
 <script>

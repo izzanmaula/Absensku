@@ -213,7 +213,7 @@ document.getElementById('modalzoom').addEventListener('click', function(event) {
 
 #myImg:hover {opacity: 0.7;}
 
-The Modal (background) */
+/* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
